@@ -51,7 +51,7 @@ export async function emailOrderHistory(
     }
   }
 
-  const orders = user.orders.map(async (order) => {
+  const orders = user.orders.map(async (order: any) => {
     return {
       ...order,
       price: order.product.price,  
