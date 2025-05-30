@@ -1,4 +1,5 @@
-import { Nav, NavLink } from "@/app/(customerFacing)/_components/navigation/Nav";
+import { Nav } from "@/app/(customerFacing)/_components/navigation/Nav";
+import { NavLink } from "@/app/(customerFacing)/_components/navigation/NavLink";
 
 export const dynamic = "force-dynamic"
 
@@ -11,7 +12,7 @@ export default function Adminlayout({ children,}: Readonly<{ children: React.Rea
             <NavLink href="/admin/users">Customers</NavLink>
             <NavLink href="/admin/orders">Orders</NavLink>
          </Nav>
-         <div className="container m-6">{children}</div>
+         <div className="container p-4">{children}</div>
       </>
     );
   }

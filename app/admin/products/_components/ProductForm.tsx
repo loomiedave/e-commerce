@@ -20,7 +20,6 @@ export default function ProductForm({ product }: { product?: Product | null }) {
     const [error, action ] = useActionState(product == null ? addProduct :updateProduct.bind(null, product.id), {})
     const [price, setPrice] = useState<number>(product?.price || 0)
     return (
-        // @ts-ignore
         <form action={action} className="space-y-8">
             <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>

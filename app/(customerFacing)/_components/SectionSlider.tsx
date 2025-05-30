@@ -1,10 +1,9 @@
 'use client'
-// @ts-ignore
+// @ts-expect-error:  Module has no type definitions but works at runtime
 import type { Options } from '@splidejs/react-splide'
-// @ts-ignore
+// @ts-expect-error:  Module has no type definitions but works at runtime
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
-// @ts-ignore
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import { SlideItemsData } from '@/data/contents'
 import type { FC, ReactNode } from 'react'
@@ -27,36 +26,36 @@ const AutoScrollSlider: FC<AutoScrollSliderProps> = ({ children, trigger, option
     )
 }
 
-export default function () {
+export default function SectionSlider() {
     const sliderOptions: Options = {
         autoScroll: {
-            speed: 0.7,
+            speed: 1.5,
         },
         arrows: false,
-        perpage: 5,
+        perPage: 3,
         type: 'loop',
         drag: 'free',
         pagination: false,
-        gap: '50px',
+        gap: '40px',
         breakpoints: {
             640: {
-                perpage: 2,
+                perPage: 2,
                 gap: '10px',
             },
             768: {
-                perpage: 2,
+                perPage: 3,
                 gap: '10px',
             },
             1024: {
-                perpage: 3,
+                perPage: 4,
                 gap: '40px',
             },
             1280: {
-                perpage: 4,
+                perPage: 5,
                 gap: '40px',
             },
             1536: {
-                 perpage: 4,
+                 perPage: 6,
                  gap: '40px',
             },
         },
@@ -65,24 +64,26 @@ export default function () {
 
     return (
         <div className='border-y border-neutral-300 py-10'>
+            <div className="flex items-center justify-center min-h-[100px] bg-gradient-to-br from-slate-50 to-gray-100 animate-pulse mb-4">
+                <h1 className="text-3xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent tracking-tight leading-none text-center px-4">
+                    Chyme Emenike
+                </h1>
+            </div>
             <AutoScrollSlider trigger options={sliderOptions}>
                 {SlideItemsData.map((item) => (
                     <SplideSlide key={item.title}>
-                        <div className='flex items-center gap-2'>
-                          <div className='h-16 w-32 overflow-hidden rounded-lg'>
+                        <div className='flex items-center flex-col'>
+                          <div className='h-32 w-32 overflow-hidden rounded-lg'>
                             <Image
                                src={item.coverImage}
-                               alt='cover image'
+                               alt=''
                                width={500}
                                height={500}
                                className='h-full w-full object-cover object-center'
                             />
                           </div>
                           <p className='font-medium'>
-                            {item.title} {' '}
-                            {item.year !== null? (
-                                <span className='text-neutral-500'>{item.year}</span>
-                            ): null}
+                            {item.title}
                           </p>
                         </div>
                     </SplideSlide>
@@ -91,39 +92,3 @@ export default function () {
         </div>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

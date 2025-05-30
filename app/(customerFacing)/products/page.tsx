@@ -3,6 +3,7 @@ import ProductCardSkeleton from "@/components/ProductCardSkeleton"
 import  prisma  from "@/lib/prisma"
 import ProductCard from "@/components/ProductCard"
 import { cache } from '@/lib/cache'
+import SectionSlider from "./../_components/SectionSlider" 
 
 const getProducts = cache (() => {
     return prisma.product.findMany({
@@ -14,7 +15,8 @@ const getProducts = cache (() => {
 
 export default function ProductsPage() {
     return (
-        <div className="p-6">
+        <div>
+            <SectionSlider />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <Suspense fallback={
                     <>

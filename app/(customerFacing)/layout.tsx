@@ -1,5 +1,6 @@
 import { Footer } from "@/app/(customerFacing)/_components/Footer";
-import { Nav, NavLink } from "@/app/(customerFacing)/_components/navigation/Nav";
+import { Nav } from "@/app/(customerFacing)/_components/navigation/Nav";
+import { NavLink } from "@/app/(customerFacing)/_components/navigation/NavLink";
 
 export const dynamic = "force-dynamic";
 

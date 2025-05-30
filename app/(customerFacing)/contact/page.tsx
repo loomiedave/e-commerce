@@ -40,7 +40,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export default function ContactPage() {
                 Get in Touch
               </h2>
               <p className="text-gray-600 mb-8">
-                Have questions about our services? Need support? We're here to help.
+                Have questions about our services? Need support? We&apos;re here to help.
               </p>
             </div>
 
@@ -106,7 +106,7 @@ export default function ContactPage() {
             Frequently Asked Questions
           </h2>
           <p className="text-gray-600 mb-8">
-            Can't find what you're looking for? Check out our FAQ section or send us a message.
+            Can&apos;t find what you&apos;re looking for? Check out our FAQ section or send us a message.
           </p>
           <Card className="max-w-4xl mx-auto">
             <CardContent className="p-8">
@@ -132,7 +132,7 @@ export default function ContactPage() {
                     Do you offer support in multiple languages?
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Currently, we provide support primarily in English and French, but we're expanding our language capabilities.
+                    Currently, we provide support primarily in English and French, but we&apos;re expanding our language capabilities.
                   </p>
                 </div>
                 <div>
@@ -140,7 +140,7 @@ export default function ContactPage() {
                     Can I schedule a call?
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Yes! Mention your preferred time in your message and we'll coordinate a call.
+                    Yes! Mention your preferred time in your message and we&apos;ll coordinate a call.
                   </p>
                 </div>
               </div>

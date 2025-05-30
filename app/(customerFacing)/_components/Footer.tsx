@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Clock,ArrowRight,Scissors,Award,Users } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Clock, Scissors, Award, Users } from "lucide-react";
 
 export function Footer() {
     return (
@@ -93,7 +92,7 @@ export function Footer() {
                                 {
                                     icon: Mail,
                                     title: "Email Us",
-                                    content: "info@chymeemenike.com"
+                                    content: "chymeemenike@gmail.com"
                                 },
                                 {
                                     icon: Clock,
@@ -114,29 +113,6 @@ export function Footer() {
 
                     {/* Newsletter */}
                     <div className="space-y-6">
-                        <div>
-                            <h4 className="text-lg font-semibold text-white mb-2">Stay Updated</h4>
-                            <p className="text-slate-300 text-sm">
-                                Subscribe to our newsletter for exclusive offers and style tips.
-                            </p>
-                        </div>
-                        
-                        <div className="space-y-3">
-                            <div className="flex space-x-2">
-                                <Input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    className="bg-slate-800 border-slate-700 text-white placeholder-slate-400 focus:border-slate-500"
-                                />
-                                <Button size="icon" className="bg-white text-slate-900 hover:bg-slate-100 shrink-0">
-                                    <ArrowRight className="h-4 w-4" />
-                                </Button>
-                            </div>
-                            <p className="text-xs text-slate-400">
-                                We respect your privacy. Unsubscribe anytime.
-                            </p>
-                        </div>
-
                         {/* Features */}
                         <div className="space-y-3 pt-4 border-t border-slate-700">
                             {[
@@ -160,7 +136,7 @@ export function Footer() {
                     <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
                         <div className="text-center sm:text-left">
                             <p className="text-slate-400 text-sm">
-                                © 2024 Chyme Emenike. All rights reserved.
+                                © 2025 Chyme Emenike. All rights reserved.
                             </p>
                         </div>
                         

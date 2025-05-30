@@ -1,7 +1,6 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { DashBoardCardProps } from "@/types/types";
 import  prisma  from "@/lib/prisma";
 import  { formatNumber } from "@/lib/formatters";
+import DashboardCard from "./_components/DashBoardCard";
 
 
 function wait(duration: number) {
@@ -53,7 +52,7 @@ export default async function AdminDashboard() {
     ])
 
     return(
-        <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
          <DashboardCard title="Orders" 
            subtitle="Total Orders" 
            body={formatNumber(salesData.numberOfSales)} 
@@ -67,21 +66,6 @@ export default async function AdminDashboard() {
              body={formatNumber(productData.activeCount)} 
             />
         
-        </div>
-
-        
-    )
-}
-
-function DashboardCard ({title, subtitle, body}: DashBoardCardProps) {
-    return (
-        <Card>
-        <CardHeader>
-            <CardTitle>{title}</CardTitle>
-            <CardDescription>{subtitle}</CardDescription>
-        </CardHeader>
-        
-        <CardContent>{body}</CardContent>
-      </Card>
+        </div>   
     )
 }

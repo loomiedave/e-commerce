@@ -1,13 +1,18 @@
-// /app/products/[id]/page.tsx
-import  prisma  from "@/lib/prisma";
+import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default async function ProductPage({ params }: { params: { id: string } }) {
+export default async function ProductPage({ 
+  params 
+}: { 
+  params: Promise<{ id: string }> 
+}) {
+  // Await the params promise
+  const { id } = await params;
 
   const product = await prisma.product.findUnique({
-    where: { id: params.id },
+    where: { id },
   });
 
   if (!product) return notFound();

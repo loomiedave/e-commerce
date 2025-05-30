@@ -4,8 +4,11 @@ import { NextResponse, NextRequest } from "next/server"
 
 export async function GET(
     req: NextRequest, 
-    { params: { downloadVerificationId } }: { params: { downloadVerificationId: string } }
+    { params }: { params: Promise<{ downloadVerificationId: string }> }
 ) {
+    // Await the params promise
+    const { downloadVerificationId } = await params;
+
     const data = await prisma.downloadVerification.findUnique({
         where: { id: downloadVerificationId, expiredAt: { gt: new Date() } },
         select: { product: { select: { filepath: true, name: true }} }

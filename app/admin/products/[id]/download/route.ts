@@ -3,12 +3,13 @@ import fs from "fs/promises"
 import prisma from "@/lib/prisma"
 import { notFound } from "next/navigation"
 
-
-
 export async function GET(
     req: NextRequest, 
-     { params: { id }}: { params: { id: string} }
+    { params }: { params: Promise<{ id: string }> }
 ) {
+    // Await the params promise
+    const { id } = await params;
+
     const product = await prisma.product.findUnique({
         where: { id },
         select: {filepath: true, name: true},
