@@ -51,6 +51,7 @@
               <TableCell>{user.email}</TableCell>
               <TableCell>{formatNumber(user.orders.length)}</TableCell>
               <TableCell>
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 {[...new Set(user.orders.map((order: any) => order.phone))].join(", ")}
               </TableCell>
               <TableCell className="text-center">
