@@ -45,12 +45,13 @@
           </TableRow>
         </TableHeader>
         <TableBody>
-          {users.map(user => (
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+          {users.map((user: any) => (
             <TableRow key={user.id}>
               <TableCell>{user.email}</TableCell>
               <TableCell>{formatNumber(user.orders.length)}</TableCell>
               <TableCell>
-                {[...new Set(user.orders.map(order => order.phone))].join(", ")}
+                {[...new Set(user.orders.map((order: any) => order.phone))].join(", ")}
               </TableCell>
               <TableCell className="text-center">
                 <DropdownMenu>
