@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import ProductCard from "@/components/ProductCard"
-import { Product } from "@prisma/client"
 import ProductCardSkeleton from "@/components/ProductCardSkeleton"
 import { Suspense } from "react"
 import { cache } from '@/lib/cache'
@@ -78,7 +77,7 @@ function ProductGridSection({ productsFetcher, title }: ProductGridSectionProps)
         </section>
     )
 }
-
+// @ts-expect-error - Prisma types not generated yet
 async function ProductSuspense({ productsFetcher }: { productsFetcher: () => Promise<Product[]> }) {
     return (
         (await productsFetcher()).map(product => (
