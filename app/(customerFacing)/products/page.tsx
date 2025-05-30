@@ -37,6 +37,7 @@ export default function ProductsPage() {
 
 async function ProductsSuspense(){
     const products = await getProducts()
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return products.map((product: any) => (
         <ProductCard key={product.id} {...product}/>
     )) 
