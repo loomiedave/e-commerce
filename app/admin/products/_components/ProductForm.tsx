@@ -8,11 +8,17 @@ import { Button } from "@/components/ui/button"
 import { addProduct, updateProduct } from "../../_actions/products"
 import { useFormStatus } from "react-dom"
 import { useActionState } from 'react';
-import { Product } from "@prisma/client"
 import Image from "next/image"
 import { Skeleton } from "@/components/ui/skeleton"
 
-
+export interface Product {
+    id: string;
+    name: string;
+    price: number;
+    description: string;
+    imagePath: string;
+    filepath: string
+  }
 
 export default function ProductForm({ product }: { product?: Product | null }) {
     const [isImageLoaded, setIsImageLoaded] = useState(false);
