@@ -37,7 +37,7 @@ export default function ProductsPage() {
 
 async function ProductsSuspense(){
     const products = await getProducts()
-    return products.map(product => (
+    return products.map((product: any) => (
         <ProductCard key={product.id} {...product}/>
     )) 
 }
