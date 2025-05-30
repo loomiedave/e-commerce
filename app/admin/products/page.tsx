@@ -55,7 +55,8 @@ async function ProductsTable() {
                </TableRow>
            </TableHeader>
            <TableBody>
-                {products.map((product) => (
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                {products.map((product: any) => (
                     <TableRow key={product.id}>
                         <TableCell className="w-0">
                             {product.isAvailableForPurchase ? <> 
