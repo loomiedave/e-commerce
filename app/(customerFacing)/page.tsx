@@ -14,7 +14,7 @@ const getMostPopularProducts = cache(() => {
     return prisma.product.findMany({
         where: { isAvailableForPurchase: true },
         orderBy: { orders: { _count: "desc" } },
-        take: 6
+        take: 4
     })
 }, ["/", "getMostPopularProducts"], { revalidate: 60 * 60 * 24 })
 
@@ -22,7 +22,7 @@ const getNewestProducts = cache(() => {
     return prisma.product.findMany({
         where: { isAvailableForPurchase: true },
         orderBy: { createdAt: "desc" },
-        take: 6
+        take: 3
     })
 }, ["/", "getNewestProducts"])
 
